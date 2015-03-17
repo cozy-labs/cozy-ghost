@@ -32,7 +32,7 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blogs published URL.
-        url: 'http://localhost:9104/public/blog/',
+        url: 'http://fakeurl:9104/public/blog/',
 
         database: {
             client: 'sqlite3',
@@ -117,3 +117,4 @@ config = {
 
 // Export config
 module.exports = config;
+

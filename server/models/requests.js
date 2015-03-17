@@ -6,6 +6,9 @@ var cozydb = require('cozydb');
 module.exports = {
   blog: {
     all: cozydb.defaultRequests.all,
+  },
+  instance: {
+    all: americano.defaultRequests.all
   }
 };
 

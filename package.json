@@ -27,6 +27,14 @@
     "test": "cake tests",
     "start": "node server.js"
   },
-  "cozy-permissions": {},
+  "cozy-permissions": {
+    "Blog": {
+      "description": "Creates and edits your blog"
+    },
+    "CozyInstance": {
+      "description": "Read the cozy url"
+    },
+
+    },
   "cozy-displayName": "Blog"
 }

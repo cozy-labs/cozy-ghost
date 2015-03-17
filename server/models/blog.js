@@ -1,5 +1,3 @@
-// See documentation on https://github.com/aenario/cozydb/
-
 var cozydb = require('cozydb');
 
 var BlogModel = cozydb.getModel('Blog', {
