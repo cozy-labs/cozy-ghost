@@ -80,11 +80,6 @@ apiRoutes = function (middleware) {
     router.post('/authentication/setup', api.http(api.authentication.setup));
     router.get('/authentication/setup', api.http(api.authentication.isSetup));
     router.post('/authentication/token',
-        // function(req, res, next) {
-        //     console.log("req.body : ");
-        //     console.log(req.body);
-        //     next()
-        // },
         middleware.spamSigninPrevention,
         middleware.addClientSecret,
         middleware.authenticateClient,

@@ -114,6 +114,8 @@ DataImporter.prototype.doImport = function (data) {
                     return utils.importSettings(tableData.settings, t);
                 }).then(function (results) {
                     if (results) {
+                        for (var i = results[0]._settledValue.length - 1; i >= 0; i--) {
+                        };
                         importResults = importResults.concat(results);
                     }
                 }).then(function () {

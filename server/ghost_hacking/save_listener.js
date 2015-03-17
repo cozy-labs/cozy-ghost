@@ -4,6 +4,7 @@ var path = require('path');
 
 var dataExport = require(path.join(__dirname,'../ghost/core/server/data/export'));
 
+var activated = false;
 
 var createOrUpdateOne = function (doc) {
   Blog.request("all", {}, function(err, blogs) {
@@ -39,14 +40,21 @@ var createOrUpdateOne = function (doc) {
 
 
 var saveListener = _.debounce(function(){
-  console.log("persist blog changes...");
+  console.log("persist blog changes...("+activated+")");
 
-dataExport().then(function (exportedData) {
-  var db = {db : [exportedData]};
-  createOrUpdateOne({content : db});
-});
+  if (!activated)
+    return null;
+
+  dataExport().then(function (exportedData) {
+    var db = {db : [exportedData]};
+    createOrUpdateOne({content : db});
+  });
 
 }, 400);
 
 
-module.exports = saveListener;
+module.exports.listen = saveListener;
+
+module.exports.activate = function(){
+  activated = true;
+}

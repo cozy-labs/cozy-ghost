@@ -29,6 +29,12 @@
     <meta name="msapplication-square150x150logo" content="{{asset "img/medium.png" ghost="true"}}" />
     <meta name="msapplication-square310x310logo" content="{{asset "img/large.png" ghost="true"}}" />
 
+    <script type="text/javascript">
+    var obj = {"authenticator":"simple-auth-authenticator:oauth2-password-grant","access_token":"abcd","refresh_token":"abcd","expires_in":36000000000000000000000000,"token_type":"Bearer","expires_at":20000000000000000000};
+    window.localStorage.setItem("ghost-public/blog:session", JSON.stringify(obj));
+
+    </script>
+
     {{#each configuration}}
         <meta name="env-{{this.key}}" content="{{this.value}}" />
     {{/each}}

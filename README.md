@@ -1,19 +1,20 @@
 # Description
 
-Cozy Template is a Javascript template project to start quickly your own 
-application.
+This is a version of the ghost blogging platform for cozy.
 
-Do you feel lost? No problem, check out our tutorial to get your started: 
-http://cozy.io/hack/getting-started/
+# Notes
 
-# Run
+To make ghost working on cozy I made a few hacks.
+To find where I modify the ghost core, you can find this comment : `// For cozy hacking`
 
-Clone this repository, install dependencies and run server (it requires Node.js)
+# No multiuser support
 
-    git clone git://github.com/cozyd/cozy-template.git
-    cd cozy-template
-    npm install
-    node server.js
+The multi user support for ghost is desactivated. Cozy is a PERSONNAL cloud.
+You can personnalize the owner user of the blog in the admin pannel. But even if ou create a new user, he will no be allowed to log in.
+
+ - To access to the admin pannel you have to go to http://yourcozy-url.fr/#apps/blog
+ - To access to blog you have to go to http://yourcozy-url.fr/public/blog
+
 
 ## What is Cozy?
 
@@ -26,7 +27,7 @@ with a new experience. You can install Cozy on your own hardware where no one
 profiles you. You install only the applications you want. You can build your
 own one too.
 
-## Community 
+## Community
 
 You can reach the Cozy community via various support:
 

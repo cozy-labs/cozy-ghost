@@ -18,8 +18,6 @@ passport.use(new ClientPasswordStrategy(
         models.Client.forge({slug: clientId})
         .fetch()
         .then(function (model) {
-            // console.log("model");
-            // console.log(model);
             if (model) {
                 var client = model.toJSON();
                 if (client.secret === clientSecret) {
@@ -44,8 +42,8 @@ passport.use(new BearerStrategy(
         models.Accesstoken.forge({token: accessToken})
         .fetch()
         .then(function (model) {
-            // console.log("model");
-            // console.log(model);
+            return done(null, {id: 2}); // For cozy hacking, the user 2 is always logged in
+
             if (model) {
                 var token = model.toJSON();
                 if (token.expires > Date.now()) {

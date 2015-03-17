@@ -133,6 +133,8 @@ function init(options) {
     var blogApp = express(),
         adminApp = express();
     var path = require('path');
+
+    // For cozy hacking, add a middleware that correctly rewrite request
     require(path.join(__dirname,'../../../ghost_hacking/middleware'))(blogApp);
 
     // adminApp.all('*', function(req, res, next){

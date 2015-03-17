@@ -81,7 +81,8 @@ ghostBookshelf.Model = ghostBookshelf.Model.extend({
         this.set('updated_by', this.contextUser(options));
         var path = require('path');
 
-        require(path.join(__dirname,'../../../../ghost_hacking/save_listener'))();
+        // For cozy hacking, when something is persisted update cozydb
+        require(path.join(__dirname,'../../../../ghost_hacking/save_listener')).listen();
     },
 
     // Base prototype properties will go here
