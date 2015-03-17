@@ -63,8 +63,10 @@ GhostServer.prototype.logStartMessages = function () {
     // Startup & Shutdown messages
     if (process.env.NODE_ENV === 'production') {
         console.log(
-            'Ghost is running...'.green,
-            '\nYour blog is now available on',
+            ('Ghost is running in ' + process.env.NODE_ENV + '...').green,
+            '\nListening on',
+                config.getSocket() || (process.env.HOST || config.server.host) + ':' + (process.env.PORT || config.server.port),
+            '\nUrl configured as:',
             config.url,
             '\nCtrl+C to shut down'.grey
         );
@@ -72,7 +74,7 @@ GhostServer.prototype.logStartMessages = function () {
         console.log(
             ('Ghost is running in ' + process.env.NODE_ENV + '...').green,
             '\nListening on',
-                config.getSocket() || config.server.host + ':' + config.server.port,
+                config.getSocket() || (process.env.HOST || config.server.host) + ':' + (process.env.PORT || config.server.port),
             '\nUrl configured as:',
             config.url,
             '\nCtrl+C to shut down'.grey
@@ -140,8 +142,8 @@ GhostServer.prototype.start = function (externalApp) {
             fs.chmod(socketConfig.path, socketConfig.permissions);
         } else {
             self.httpServer = rootApp.listen(
-                config.server.port,
-                config.server.host
+                process.env.HOST || config.server.port,
+                process.env.PORT || config.server.host
             );
         }
 

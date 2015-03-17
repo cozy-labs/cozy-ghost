@@ -1,3 +1,5 @@
+console.log(process.env.NODE_ENV = "development");
+
 var ghost = require('./server/ghost/core/index');
 var path = require('path');
 var importer = require(path.join(__dirname,'./server/ghost/core/server/data/importer/index'));
