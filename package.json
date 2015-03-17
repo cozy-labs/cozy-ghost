@@ -1,14 +1,14 @@
 {
-  "name": "cozy-template-js",
+  "name": "cozy-blog",
   "version": "1.0.0",
   "engines": [
     "node = 0.10.x"
   ],
-  "description": "A template project for Cozy applications written in JavaScript",
+  "description": "Ghost blogging platform ported on cozy",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mycozycloud/cozy-template-js.git"
+    "url": "https://github.com/cylwin/cozy-ghost.git"
   },
   "main": "server.js",
   "dependencies": {
@@ -28,5 +28,5 @@
     "start": "node server.js"
   },
   "cozy-permissions": {},
-  "cozy-displayName": "Template"
+  "cozy-displayName": "Blog"
 }
