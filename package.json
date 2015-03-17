@@ -33,8 +33,7 @@
     },
     "CozyInstance": {
       "description": "Read the cozy url"
-    },
-
-    },
+    }
+  },
   "cozy-displayName": "Blog"
 }
