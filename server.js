@@ -24,7 +24,7 @@ cozydb.configure(__dirname, null, function(){
     }
 
     console.log("domain : ", domain);
-    ghostConfig.development.url = require('url').resolve(domain, '/public/blog/');
+    ghostConfig.production.url = require('url').resolve(domain, '/public/blog/');
 
     ghost().then(function(ghostServer) {
       console.log("ghost.then()");
