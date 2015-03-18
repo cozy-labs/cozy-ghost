@@ -60,9 +60,9 @@ errors = {
     },
 
     logInfo: function (component, info) {
-        if ((process.env.NODE_ENV === 'development' ||
-            process.env.NODE_ENV === 'staging' ||
-            process.env.NODE_ENV === 'production')) {
+        if ((process.env.NODE_ENV_COZYHACK === 'development' ||
+            process.env.NODE_ENV_COZYHACK === 'staging' ||
+            process.env.NODE_ENV_COZYHACK === 'production')) {
             var msg = [component.cyan + ':'.cyan, info.cyan];
 
             console.info.apply(console, msg);
@@ -70,9 +70,9 @@ errors = {
     },
 
     logWarn: function (warn, context, help) {
-        if ((process.env.NODE_ENV === 'development' ||
-            process.env.NODE_ENV === 'staging' ||
-            process.env.NODE_ENV === 'production')) {
+        if ((process.env.NODE_ENV_COZYHACK === 'development' ||
+            process.env.NODE_ENV_COZYHACK === 'staging' ||
+            process.env.NODE_ENV_COZYHACK === 'production')) {
             warn = warn || 'no message supplied';
             var msgs = ['\nWarning:'.yellow, warn.yellow, '\n'];
 
@@ -123,9 +123,9 @@ errors = {
         }
         // TODO: Logging framework hookup
         // Eventually we'll have better logging which will know about envs
-        if ((process.env.NODE_ENV === 'development' ||
-            process.env.NODE_ENV === 'staging' ||
-            process.env.NODE_ENV === 'production')) {
+        if ((process.env.NODE_ENV_COZYHACK === 'development' ||
+            process.env.NODE_ENV_COZYHACK === 'staging' ||
+            process.env.NODE_ENV_COZYHACK === 'production')) {
             msgs = ['\nERROR:'.red, err.red, '\n'];
 
             if (context) {
@@ -243,7 +243,7 @@ errors = {
         function renderErrorInt(errorView) {
             var stack = null;
 
-            if (process.env.NODE_ENV !== 'production' && err.stack) {
+            if (process.env.NODE_ENV_COZYHACK !== 'production' && err.stack) {
                 stack = parseStack(err.stack);
             }
 

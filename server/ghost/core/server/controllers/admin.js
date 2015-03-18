@@ -13,6 +13,7 @@ adminControllers = {
         /*jslint unparam:true*/
 
         function renderIndex() {
+            console.log("get admin index");
             return api.configuration.browse().then(function (data) {
                 var apiConfig = _.omit(data.configuration, function (value) {
                     return _.contains(['environment', 'database', 'mail', 'version'], value.key);

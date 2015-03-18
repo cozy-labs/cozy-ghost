@@ -61,9 +61,9 @@ GhostServer.prototype.logStartMessages = function () {
     }
 
     // Startup & Shutdown messages
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV_COZYHACK === 'production') {
         console.log(
-            ('Ghost is running in ' + process.env.NODE_ENV + '...').green,
+            ('Ghost is running in ' + process.env.NODE_ENV_COZYHACK + '...').green,
             '\nListening on',
                 config.getSocket() || (process.env.HOST || config.server.host) + ':' + (process.env.PORT || config.server.port),
             '\nUrl configured as:',
@@ -72,7 +72,7 @@ GhostServer.prototype.logStartMessages = function () {
         );
     } else {
         console.log(
-            ('Ghost is running in ' + process.env.NODE_ENV + '...').green,
+            ('Ghost is running in ' + process.env.NODE_ENV_COZYHACK + '...').green,
             '\nListening on',
                 config.getSocket() || (process.env.HOST || config.server.host) + ':' + (process.env.PORT || config.server.port),
             '\nUrl configured as:',
@@ -83,7 +83,7 @@ GhostServer.prototype.logStartMessages = function () {
 
     function shutdown() {
         console.log('\nGhost has shut down'.red);
-        if (process.env.NODE_ENV === 'production') {
+        if (process.env.NODE_ENV_COZYHACK === 'production') {
             console.log(
                 '\nYour blog is now offline'
             );

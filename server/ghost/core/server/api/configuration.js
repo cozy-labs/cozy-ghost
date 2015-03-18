@@ -13,7 +13,7 @@ function getValidKeys() {
             apps: config.apps === true ? true : false,
             codeInjectionUI: config.codeInjectionUI === true ? true : false,
             version: config.ghostVersion,
-            environment: process.env.NODE_ENV,
+            environment: process.env.NODE_ENV_COZYHACK,
             database: config.database.client,
             mail: _.isObject(config.mail) ? config.mail.transport : '',
             blogUrl: config.url.replace(/\/$/, ''),

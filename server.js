@@ -1,6 +1,7 @@
 console.log("process.env.TOKEN", process.env.TOKEN);
 console.log("process.env.NAME", process.env.NAME);
 
+process.env.NODE_ENV_COZYHACK = "development"
 
 var ghost = require('./server/ghost/core/index');
 var path = require('path');
@@ -24,7 +25,8 @@ cozydb.configure(__dirname, null, function(){
     }
 
     console.log("domain : ", domain);
-    ghostConfig.production.url = require('url').resolve(domain, '/public/blog/');
+    // ghostConfig.production.url = require('url').resolve(domain, '/public/blog/');
+    ghostConfig.development.url = require('url').resolve(domain, '/public/blog/');
 
     ghost().then(function(ghostServer) {
       console.log("ghost.then()");

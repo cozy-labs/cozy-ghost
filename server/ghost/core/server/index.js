@@ -27,7 +27,7 @@ function doFirstRun() {
     var firstRunMessage = [
         'Welcome to Ghost.',
         'You\'re running under the <strong>',
-        process.env.NODE_ENV,
+        process.env.NODE_ENV_COZYHACK,
         '</strong>environment.',
 
         'Your URL is set to',
@@ -68,7 +68,7 @@ function builtFilesExist() {
     var deferreds = [],
         location = config.paths.builtScriptPath,
 
-        fileNames = process.env.NODE_ENV === 'production' ?
+        fileNames = process.env.NODE_ENV_COZYHACK === 'production' ?
             helpers.scriptFiles.production : helpers.scriptFiles.development;
 
     function checkExist(fileName) {

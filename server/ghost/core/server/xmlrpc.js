@@ -20,7 +20,7 @@ function ping(post) {
         url = config.urlFor('post', {post: post}, true);
 
     // Only ping when in production and not a page
-    if (process.env.NODE_ENV !== 'production' || post.page || config.isPrivacyDisabled('useRpcPing')) {
+    if (process.env.NODE_ENV_COZYHACK !== 'production' || post.page || config.isPrivacyDisabled('useRpcPing')) {
         return;
     }
 

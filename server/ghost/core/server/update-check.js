@@ -73,7 +73,7 @@ function updateCheckData() {
 
     data.ghost_version   = currentVersion;
     data.node_version    = process.versions.node;
-    data.env             = process.env.NODE_ENV;
+    data.env             = process.env.NODE_ENV_COZYHACK;
     data.database_type   = config.database.client;
     data.email_transport = mailConfig && (mailConfig.options && mailConfig.options.service ? mailConfig.options.service : mailConfig.transport);
 
@@ -181,7 +181,7 @@ function updateCheck() {
     // 2. we've already done a check this session
     // 3. we're not in production or development mode
     // TODO: need to remove config.updateCheck in favor of config.privacy.updateCheck in future version (it is now deprecated)
-    if (config.updateCheck === false || config.isPrivacyDisabled('useUpdateCheck') || _.indexOf(allowedCheckEnvironments, process.env.NODE_ENV) === -1) {
+    if (config.updateCheck === false || config.isPrivacyDisabled('useUpdateCheck') || _.indexOf(allowedCheckEnvironments, process.env.NODE_ENV_COZYHACK) === -1) {
         // No update check
         return Promise.resolve();
     } else {

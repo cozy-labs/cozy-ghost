@@ -43,7 +43,7 @@ function ConfigManager(config) {
 ConfigManager.prototype.getSocket = function () {
     var socketConfig,
         values = {
-            path: path.join(this._config.paths.contentPath, process.env.NODE_ENV + '.socket'),
+            path: path.join(this._config.paths.contentPath, process.env.NODE_ENV_COZYHACK + '.socket'),
             permissions: '660'
         };
 
@@ -299,7 +299,7 @@ ConfigManager.prototype.readFile = function (envVal) {
  * @return {Promise.<Object>} Returns a promise that resolves to the config object.
  */
 ConfigManager.prototype.validate = function () {
-    var envVal = process.env.NODE_ENV || undefined,
+    var envVal = process.env.NODE_ENV_COZYHACK || undefined,
         hasHostAndPort,
         hasSocket,
         config,
@@ -402,8 +402,8 @@ ConfigManager.prototype.displayDeprecated = function (item, properties, address)
     }
 };
 
-if (testingEnvs.indexOf(process.env.NODE_ENV) > -1) {
-    defaultConfig  = require('../../../config.example')[process.env.NODE_ENV];
+if (testingEnvs.indexOf(process.env.NODE_ENV_COZYHACK) > -1) {
+    defaultConfig  = require('../../../config.example')[process.env.NODE_ENV_COZYHACK];
 }
 
 module.exports = new ConfigManager(defaultConfig);

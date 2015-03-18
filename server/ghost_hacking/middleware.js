@@ -7,6 +7,7 @@ module.exports = function(expressApp) {
         req.url = req.url.substring("public/".length);
         console.log("new url : ", req.url);
       }else{
+        console.log("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
         req.url = path.join("/ghost/", req.url);
         console.log("private url", req.url);
       }

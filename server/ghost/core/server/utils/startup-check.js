@@ -2,7 +2,7 @@ var packages = require('../../../package.json'),
     path = require('path'),
     crypto = require('crypto'),
     fs = require('fs'),
-    mode = process.env.NODE_ENV === undefined ? 'development' : process.env.NODE_ENV,
+    mode = process.env.NODE_ENV_COZYHACK === undefined ? 'development' : process.env.NODE_ENV_COZYHACK,
     appRoot = path.resolve(__dirname, '../../../'),
     configFilePath = process.env.GHOST_CONFIG || path.join(appRoot, 'config.js'),
     checks;
