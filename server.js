@@ -1,4 +1,7 @@
 console.log(process.env.NODE_ENV = "development");
+console.log("process.env.TOKEN", process.env.TOKEN);
+console.log("process.env.NAME", process.env.NAME);
+
 
 var ghost = require('./server/ghost/core/index');
 var path = require('path');
