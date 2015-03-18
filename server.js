@@ -17,6 +17,11 @@ var ghostConfig = require('./server/ghost/config.js');
 cozydb.configure(__dirname, null, function(){
 
   CozyInstance.getDomain(function(err, domain){
+    if(err) {
+      console.log(err)
+      return
+    }
+
     console.log("domain : ", domain);
     ghostConfig.development.url = require('url').resolve(domain, '/public/blog/');
 
