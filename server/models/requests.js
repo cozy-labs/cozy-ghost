@@ -8,7 +8,7 @@ module.exports = {
     all: cozydb.defaultRequests.all,
   },
   instance: {
-    all: americano.defaultRequests.all
+    all: cozydb.defaultRequests.all
   }
 };
 

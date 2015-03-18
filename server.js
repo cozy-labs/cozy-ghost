@@ -16,7 +16,6 @@ var initial_datum = require('./server/ghost_hacking/initial_datum');
 
 var ghostConfig = require('./server/ghost/config.js');
 
-
 cozydb.configure(__dirname, null, function(){
 
   CozyInstance.getDomain(function(err, domain){
