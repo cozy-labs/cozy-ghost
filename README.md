@@ -6,6 +6,7 @@ This is a version of the ghost blogging platform for cozy.
 
 To make ghost working on cozy I made a few hacks.
 To find where I modify the ghost core, you can find this comment : `// For cozy hacking`
+Initial author: @cylwin
 
 # No multiuser support
 
